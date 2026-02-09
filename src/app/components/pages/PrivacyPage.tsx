@@ -2,7 +2,11 @@ import { Shield, Lock, Eye, Database, UserCheck, AlertTriangle } from 'lucide-re
 import { Card, CardContent } from '../ui/card';
 import { motion } from 'motion/react';
 
-export function PrivacyPage() {
+interface PrivacyPageProps {
+  onNavigate: (page: string, id?: string) => void;
+}
+
+export function PrivacyPage({ onNavigate }: PrivacyPageProps) {
   return (
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,7 +46,7 @@ export function PrivacyPage() {
                   <Database className="w-6 h-6 text-[#D4AF37]" />
                   1. Information We Collect
                 </h2>
-                
+
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">1.1 Personal Information</h3>
                 <p className="text-gray-700 leading-relaxed mb-2">We collect information that you provide directly to us, including:</p>
                 <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
@@ -98,7 +102,7 @@ export function PrivacyPage() {
                   <UserCheck className="w-6 h-6 text-[#D4AF37]" />
                   3. Information Sharing and Disclosure
                 </h2>
-                
+
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">3.1 Service Providers</h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   We share your information with third-party service providers who perform services on our behalf, including payment processing, shipping, email delivery, and analytics. These providers have access to your information only to perform specific tasks and are obligated to protect your information.
@@ -145,7 +149,7 @@ export function PrivacyPage() {
               {/* Section 5 */}
               <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Your Rights and Choices</h2>
-                
+
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">5.1 Access and Update</h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   You can access and update your personal information through your account settings. You may also request a copy of your data by contacting us.
